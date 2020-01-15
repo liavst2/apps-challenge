@@ -16,13 +16,7 @@ module.exports = {
         path: __dirname + "/dist"
     },
     resolve: {
-        // Add '.ts' and '.tsx' as resolvable extensions.
         extensions: [".ts", ".js", ".json"],
-        // alias: {
-        //     '@': path.resolve(__dirname, 'src/'),
-        //     'ui-logic': path.resolve(__dirname, './ui-logic'),
-        //     'react-ui': path.resolve(__dirname, './react-ui')
-        // }
     },
 
 
