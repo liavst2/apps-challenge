@@ -1,8 +1,11 @@
 
 import { Router } from "express";
-import { appCtrl } from "./app.ctrl";
+import { AppCtrl } from "./app.ctrl";
 
 export const appRouter = Router();
 
 appRouter.route("/categories")
-  .get(appCtrl.getCategories)
+  .get(AppCtrl.getCategories)
+
+appRouter.route("/items")
+  .get(AppCtrl.getApps)
