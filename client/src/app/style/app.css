@@ -1,0 +1,21 @@
+
+
+.app-panel {
+  display: flex;
+  flex-direction: column;
+  margin: 24px;
+}
+
+.header {
+  font-size: 24px;
+  font-family: monospace;
+}
+
+.row {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.filter-panel {
+  padding: 30px 0;
+}

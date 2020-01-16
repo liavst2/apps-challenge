@@ -1,9 +1,9 @@
 
 import { Request, Response } from "express";
-import { AppBL } from "../bl/app.bl";
-import { AppQuery } from "../models/query";
+import { AppBL } from "../../bl/app.bl";
+import { AppQuery } from "../../models/query";
 
-export class AppCtrl {
+export class AppPanelCtrl {
 
   static async getCategories(req: Request, res: Response) {
     try {
@@ -15,13 +15,13 @@ export class AppCtrl {
     }
   }
 
-  static getApps(req: Request, res: Response) {
+  static async getApps(req: Request, res: Response) {
     const appQuery = new AppQuery(req.query);
     if (!appQuery.isValid()) {
       return res.status(400).send("Bad query format!");
     }
     try {
-      const topApps = AppBL.getApps(appQuery);
+      const topApps = await AppBL.getApps(appQuery);
       res.status(200).send(topApps);
     } catch (err) {
       console.error(err);
