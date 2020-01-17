@@ -10,6 +10,8 @@ class FilterStore extends Dispatcher {
   readonly ranks: number[] = [...Array(5).keys()].map(i => i + 1);
   categories: string[];
 
+  appList = [];
+
   constructor() {
     super();
     this.init();
@@ -18,6 +20,27 @@ class FilterStore extends Dispatcher {
   async init() {
     this.categories = (await AppsAPI.getCategories()).data;
     this.dispatch();
+  }
+
+  async searchApps(filters) {
+    if (!this._validateFilters(filters)) {
+      return;
+    }
+    const query = new URLSearchParams(filters).toString();
+    this.appList = (await AppsAPI.getApps(query)).data;
+    this.dispatch();
+  }
+  
+  private _validateFilters(filters) {
+    if (!filters["year"] || !filters["rank"] || !filters["categories"]) {
+      alert("Not all filter fields were set!");
+      return false;
+    }
+    if (filters["categories"].length > 3) {
+      alert("You chose more than 3 categories!");
+      return false;
+    }
+    return true;
   }
 
 }

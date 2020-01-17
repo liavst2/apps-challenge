@@ -14,9 +14,9 @@ export class AppsAPI {
     return axios(req);
   }
 
-  static getApps() {
+  static getApps(query: string) {
     const req = {
-      url: `${BASE_PATH}/categories`,
+      url: `${BASE_PATH}/items?${query}`,
       method: "get"
     }
 

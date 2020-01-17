@@ -3,7 +3,7 @@ import * as Ajv from "ajv";
 
 const validator = new Ajv().compile({
   properties: {
-    birthYear: {
+    year: {
       type: "number"
     },
     categories: {
@@ -18,26 +18,26 @@ const validator = new Ajv().compile({
       maximum: 5
     },
   },
-  required: ['rank', 'categories', 'birthYear']
+  required: ['rank', 'categories', 'year']
 });
 
 
 interface IAppQuery {
-  birthYear: number;
-  categories: string[];
+  year: number;
+  categories: string;
   rank: number;
 }
 
 
-export class AppQuery implements IAppQuery {
+export class AppQuery {
 
-  birthYear: number;
+  year: number;
   categories: string[];
   rank: number;
 
   constructor(query: IAppQuery) {
-    this.birthYear = query.birthYear * 1;
-    this.categories = query.categories;
+    this.year = query.year * 1;
+    this.categories = query.categories.split(",");
     this.rank = query.rank * 1;
   }
 

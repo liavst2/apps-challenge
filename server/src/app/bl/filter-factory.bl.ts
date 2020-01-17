@@ -13,8 +13,8 @@ export class FilterFactory {
     if (appQuery.categories) {
       filters.push(new Filters.CategoryFilter(appQuery.categories));
     }
-    if (appQuery.birthYear) {
-      filters.push(new Filters.AgeFilter(appQuery.birthYear));
+    if (appQuery.year) {
+      filters.push(new Filters.AgeFilter(appQuery.year));
     }
     return filters;
   }
