@@ -1,5 +1,5 @@
 
-import { AppData } from "../data/app.data";
+import { appData } from "../data/app.data";
 import { AppQuery } from "../models/query";
 import { FilterFactory } from "./filter-factory.bl";
 import { AppFilter } from "../models/filters/filter";
@@ -9,13 +9,13 @@ export class AppBL {
 
   private static readonly RANDOM_THRESHOLD = 3;
 
-  static getCategories() {
-    return AppData.getCategories();
+  static getFiltersInfo() {
+    return appData.getFiltersInfo();
   }
 
   static getApps(appQuery: AppQuery) {
     const filters: AppFilter[] = FilterFactory.getFilters(appQuery);
-    const apps: App[] = AppData.getApps();
+    const apps: App[] = appData.getApps();
     // filtering the apps according to the filter list
     const filteredApps = this._filterApps(apps, filters);
     // choosing RANDOM_THRESHOLD in random
@@ -24,6 +24,7 @@ export class AppBL {
   }
 
   private static _filterApps(apps: App[], filters: AppFilter[]) {
+    // return apps that all filters satisfy
     const filteredApps = apps.filter(app => filters.every(filter => filter.satisfies(app)));
     return filteredApps;
   }

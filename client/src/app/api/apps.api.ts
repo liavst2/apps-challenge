@@ -3,24 +3,28 @@ import axios from "axios";
 
 const BASE_PATH = process.env.PUBLIC_URL;
 
+/**
+ * This is the bridge to the server side
+ */
 export class AppsAPI {
 
-  static getCategories() {
+  static async getFilterInfo() {
     const req = {
-      url: `${BASE_PATH}/categories`,
+      url: `${BASE_PATH}/filter-info`,
       method: "get"
     }
-
-    return axios(req);
+    const res = await axios(req);
+    return res.data;
   }
 
-  static getApps(query: string) {
+  static async getApps(query: string) {
     const req = {
       url: `${BASE_PATH}/items?${query}`,
       method: "get"
     }
 
-    return axios(req);
+    const res = await axios(req);
+    return res.data;
   }
 
 }

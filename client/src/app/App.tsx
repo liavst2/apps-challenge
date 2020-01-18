@@ -6,12 +6,13 @@ import { createMuiTheme } from "@material-ui/core/styles";
 import { lightBlue, amber } from "@material-ui/core/colors";
 
 import "./style/app.css";
+import "./style/list.css";
 
 const lightTheme = createMuiTheme({
 	palette: {
 		primary: lightBlue,
-		secondary: amber
-	}
+		secondary: amber,
+	},
 });
 
 export const App = () => (

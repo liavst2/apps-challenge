@@ -19,14 +19,19 @@
 }
 
 .filter-panel {
-  margin: 24px;
+  margin: 0 24px;
   background: beige;
 }
 
 .app-list {
   display: flex;
-  margin: 24px;
+  margin: 0 24px;
   height: 100%;
+  padding: 24px;
   justify-content: center;
   background: aliceblue;
+}
+
+.app-list > * {
+  margin: 0 10px;
 }

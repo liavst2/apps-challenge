@@ -5,9 +5,9 @@ import { AppQuery } from "../../models/query";
 
 export class AppPanelCtrl {
 
-  static async getCategories(req: Request, res: Response) {
+  static async getFlterInfo(req: Request, res: Response) {
     try {
-      const categories = await AppBL.getCategories();
+      const categories = await AppBL.getFiltersInfo();
       res.status(200).send(categories);
     } catch (err) {
       console.error(err);

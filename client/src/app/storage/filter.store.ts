@@ -2,13 +2,15 @@
 import { Dispatcher } from "@storex/core";
 import { AppsAPI } from "../api/apps.api";
 
+/**
+ * Saves info about the filters.
+ * Dispatches changes when needed.
+ */
 class FilterStore extends Dispatcher {
 
-  // arbitrarily between 1960 - 2009
-  readonly birthYears: number[] = [...Array(50).keys()].map(i => i + 1960);
-  // between 1 - 5
-  readonly ranks: number[] = [...Array(5).keys()].map(i => i + 1);
   categories: string[];
+  years: number[];
+  ranks: number[];
 
   appList = [];
 
@@ -18,7 +20,8 @@ class FilterStore extends Dispatcher {
   }
 
   async init() {
-    this.categories = (await AppsAPI.getCategories()).data;
+    const filterInfo = await AppsAPI.getFilterInfo();
+    Object.assign(this, filterInfo);
     this.dispatch();
   }
 
@@ -27,7 +30,7 @@ class FilterStore extends Dispatcher {
       return;
     }
     const query = new URLSearchParams(filters).toString();
-    this.appList = (await AppsAPI.getApps(query)).data;
+    this.appList = await AppsAPI.getApps(query);
     this.dispatch();
   }
   

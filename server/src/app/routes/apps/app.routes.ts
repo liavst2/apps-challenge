@@ -4,8 +4,8 @@ import { AppPanelCtrl } from "./app.ctrl";
 
 export const appPanelRouter = Router();
 
-appPanelRouter.route("/categories")
-  .get(AppPanelCtrl.getCategories)
+appPanelRouter.route("/filter-info")
+  .get(AppPanelCtrl.getFlterInfo)
 
 appPanelRouter.route("/items")
   .get(AppPanelCtrl.getApps)

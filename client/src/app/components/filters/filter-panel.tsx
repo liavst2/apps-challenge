@@ -1,12 +1,10 @@
 
 import * as React from "react";
 
-import { RankFilter } from "./rank-filter";
-import { CategoryFilter } from "./category-filter";
-import { AgeFilter } from "./age-filter";
-
+import { AgeFilter, CategoryFilter, RankFilter } from "./selectable-filters";
 import { filterStore } from "../../storage/filter.store";
 import { Button } from "@material-ui/core";
+
 
 export function Filters() {
 
