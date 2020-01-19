@@ -8,7 +8,7 @@ class AppData {
 
   // can be configurable if needed
   readonly YEAR_START = 1960;
-  readonly YEAR_COUNT = 50;
+  readonly YEAR_COUNT = 60;
 
   readonly RANK_START = 1;
   readonly RANK_COUNT = 5;

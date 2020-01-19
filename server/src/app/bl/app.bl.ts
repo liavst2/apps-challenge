@@ -12,7 +12,7 @@ import { App } from "../models/app";
 export class AppBL {
 
   /**
-   * How many filtered apps should return to the user.
+   * How many filtered apps should be returned to the user.
    */
   private static readonly RANDOM_THRESHOLD = 3;
 

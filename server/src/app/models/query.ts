@@ -4,7 +4,8 @@ import * as Ajv from "ajv";
 const validator = new Ajv().compile({
   properties: {
     year: {
-      type: "number"
+      type: "number",
+      maximum: new Date().getFullYear()
     },
     categories: {
       type: "array",
@@ -36,9 +37,9 @@ export class AppQuery {
   rank: number;
 
   constructor(query: IAppQuery) {
-    this.year = query.year * 1;
-    this.categories = query.categories.split(",");
-    this.rank = query.rank * 1;
+    this.year = query.year && query.year * 1;
+    this.categories = query.categories && (query.categories || "").split(",");
+    this.rank = query.rank && query.rank * 1;
   }
 
   isValid() {
