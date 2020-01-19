@@ -18,8 +18,6 @@ module.exports = {
     resolve: {
         extensions: [".ts", ".js", ".json"],
     },
-
-
     module: {
         rules: [{
                 test: /\.tsx?$/,

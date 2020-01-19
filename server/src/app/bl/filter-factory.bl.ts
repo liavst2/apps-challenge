@@ -2,7 +2,9 @@ import { AppQuery } from "../models/query";
 import { AppFilter } from "../models/filters/filter";
 import * as Filters from "../models/filters";
 
-
+/**
+ * I used a factory pattern to initialize the filters, according to query structure
+ */
 export class FilterFactory {
 
   static getFilters(appQuery: AppQuery): AppFilter[] {

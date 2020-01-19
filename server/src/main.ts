@@ -18,10 +18,18 @@ function main() {
   httpServer.listen(httpPort);
 }
 
+/**
+ * Here I will set the application with useful middlewares.
+ * @param app - the application
+ */
 function configureApp(app: express.Express) {
   app.use(bodyParser.json());
 }
 
+/**
+ * Here I will set the application routes.
+ * @param app - the application
+ */
 function configureRoutes(app: express.Express) {
   app.use("/apps", appRouter);
   app.use((req, res) => {

@@ -1,5 +1,9 @@
 import { App } from "../models/app";
 
+/**
+ * Holds the value range of the filters and the apps list.
+ * If a database is used, the fetching logic will be defined here.
+ */
 class AppData {
 
   // can be configurable if needed
