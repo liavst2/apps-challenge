@@ -13,6 +13,7 @@ class FilterStore extends Dispatcher {
   ranks: number[];
 
   appList = [];
+  searchEmpty: boolean = false;
 
   constructor() {
     super();
@@ -31,6 +32,7 @@ class FilterStore extends Dispatcher {
     }
     const query = new URLSearchParams(filters).toString();
     this.appList = await AppsAPI.getApps(query);
+    this.searchEmpty = !(this.appList || []).length;
     this.dispatch();
   }
   

@@ -8,7 +8,10 @@ cd server
 npm i --silent
 npm run build
 npm test
-
+if [ $? -ne 0 ]; then
+  echo "Something is wrong with the server functionality... exiting"
+  exit 1
+fi
 cd ..
 
 echo "Done building server side, moving to client"
@@ -19,6 +22,10 @@ cd client
 npm i --silent
 npm run build
 npm test
+if [ $? -ne 0 ]; then
+  echo "Something is wrong with the client functionality... exiting"
+  exit 1
+fi
 cd ..
 
 echo "Done building the components! running the server..."
