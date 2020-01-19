@@ -4,8 +4,6 @@ import * as http from "http";
 
 import { appRouter } from "./app";
 
-
-
 export class AppServer {
 
   readonly HTTP_PORT: number = 9898;
@@ -45,3 +43,7 @@ export class AppServer {
 
 export const appServer = new AppServer();
 
+process.on("SIGTERM", () => {
+  appServer.close();
+  process.exit(0);
+});
