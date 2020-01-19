@@ -32,11 +32,12 @@ function _SelectableFilter({
 
   return (
     <FormControl required className={classes.formControl}>
-      <InputLabel id="age-filter-select">{label}</InputLabel>
+      <InputLabel id={`${field}-filter-select`}>{label}</InputLabel>
       <Subscribe to={filterStore}>
         {() => (
           <Select
-            labelId="age-filter-select"
+            labelId={`${field}-filter-select`}
+            id={`${field}-filter`}
             value={filter}
             name={field}
             onChange={handleFilterChange}
