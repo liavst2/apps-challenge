@@ -3,7 +3,8 @@ IronApps - Apps recommendation system
 =====================================
 
 To build the app:
-- cd to the root directory (apps-challenge)
+- extract the files to an empty directory
+- run "cd apps"
 - run "sh build.sh"
 
 In the end, the script will show a message - "UI is avaliable on localhost:9898/apps"
