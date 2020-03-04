@@ -1,2 +1,2 @@
 # apps-challenge
-IS excercise
+Filter applications and display on UI accroding to user's choice
