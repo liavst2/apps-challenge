@@ -1,6 +1,6 @@
 # Apps Recommendation System
 
-Filter applications and display on UI accroding to user's choice.
+Filter applications and display on UI according to user's choice
 
 The challenge was done on CentOS (linux).
 
