@@ -1,12 +1,14 @@
 # Apps Recommendation System
 
-Filter applications and display on UI accroding to user's choice
-The challenge was done on centOS (linux).
+Filter applications and display on UI accroding to user's choice.
 
-### Running the application localy
+The challenge was done on CentOS (linux).
+
+### Running the application locally
 
 <b>Note that you'll need to install nodejs as a prerequisite step.</b>
-To run the application localy, execute the following command:
+
+To run the application locally, execute the following command:
 ```sh
 sh build.sh
 ```
